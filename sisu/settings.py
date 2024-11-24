@@ -18,6 +18,7 @@ from dotenv import load_dotenv, find_dotenv
 
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, "My App", "templates")
@@ -42,7 +43,7 @@ SECRET_KEY = 'django-insecure-fs)t6!ywrt(=o%!bh@$ajhy=x)ap^&b-at(e^p&1t$x+sk9=-q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'authentication',
     'api',
     'users',
@@ -92,7 +94,6 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'sisu.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -147,5 +148,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REDIRECT_URI = "http://127.0.0.1:8000/auth/callback/"
-REDIRECT_URI = "http://127.0.0.1:8000/auth"
+AUTH0_CALLBACK_URLS = [
+    "http://127.0.0.1:8000/auth/callback",
+    "http://127.0.0.1:8000/auth"
+]
+
+
+AUTH_USER_MODEL = 'users.User'

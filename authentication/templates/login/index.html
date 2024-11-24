@@ -1,16 +1,17 @@
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <title>Auth0 Example</title>
-  </head>
-  <body>
+</head>
+<body>
     {% if session %}
-    <h1>Welcome {{session.userinfo.name}}!</h1>
-    <p><a href="{% url 'logout' %}">Logout</a></p>
-    <div><pre>{{pretty}}</pre></div>
+        <h1>Welcome {{ session.id_token.name }}!</h1>
+        <p><a href="/logout/">Logout</a></p>
+        <div><pre>{{ pretty }}</pre></div>
     {% else %}
-    <h1>Welcome Guest</h1>
-    <p><a href="{% url 'login' %}">Login</a></p>
+        <h1>Welcome Guest</h1>
+        <p><a href="/login/">Login</a></p>
     {% endif %}
-  </body>
+</body>
 </html>
