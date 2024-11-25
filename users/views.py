@@ -9,5 +9,5 @@ class LoginStatsView(APIView):
         
         return Response({
             'login_count': login_count,
-            'logins': [{'user': login.user.email, 'timestamp': login.timestamp} for login in logins]
+            'logins': [{'users': login.user.email, 'timestamp': login.timestamp} for login in logins]
         })

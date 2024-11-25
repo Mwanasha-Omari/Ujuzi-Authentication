@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'api',
     'users',
     'rest_framework',
+    'rest_framework_simplejwt',
 
 
 ]
@@ -155,3 +156,49 @@ AUTH0_CALLBACK_URLS = [
 
 
 AUTH_USER_MODEL = 'users.User'
+
+
+
+
+
+
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {message}',
+#             'style': '{',
+#         },
+#         'simple': {
+#             'format': '{levelname} {message}',
+#             'style': '{',
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'verbose',
+#         },
+#         'file': {
+#             'level': 'ERROR',
+#             'class': 'logging.FileHandler',
+#             'filename': 'django_errors.log',  # Adjust the path as needed
+#             'formatter': 'verbose',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console', 'file'],
+#             'level': 'DEBUG',  # Log everything for debugging. Change to 'ERROR' in production.
+#             'propagate': True,
+#         },
+#         'django.request': {
+#             'handlers': ['console', 'file'],
+#             'level': 'ERROR',
+#             'propagate': False,
+#         },
+#     },
+# }
